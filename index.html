@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamshi Krishna Pasupunuti - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item:hover {
+            opacity: 0.8;
+        }
+
+        .contact-item::before {
+            content: '•';
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .contact-item:first-child::before {
+            content: '';
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #2563eb;
+        }
+
+        .summary {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #374151;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .education-item,
+        .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .education-item::before,
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: #2563eb;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .education-item:hover,
+        .experience-item:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .position {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #1e293b;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            font-size: 0.9em;
+            color: #6b7280;
+            font-weight: 500;
+            background: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        .location {
+            font-size: 0.9em;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .achievements {
+            margin-top: 15px;
+        }
+
+        .achievement-category {
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0 8px 0;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-category h4 {
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #2563eb;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #1d4ed8;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-item {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            background: #334155;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cert-issuer {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        .publication {
+            background: #2563eb;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .pub-journal {
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .pub-description {
+            line-height: 1.6;
+        }
+
+        .recognition {
+            background: #1e293b;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .recognition h3 {
+            margin-bottom: 15px;
+        }
+
+        .recognition ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recognition li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .recognition li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .availability {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .availability h3 {
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .availability p {
+            line-height: 1.6;
+            color: #374151;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .contact-info {
+                gap: 15px;
+                flex-direction: column;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .header {
+                background: #1e293b !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>VAMSHI KRISHNA PASUPUNUTI</h1>
+            <div class="subtitle">Graduate Student | Application Packaging Specialist | Cloud Infrastructure Engineer
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">Vamsi.pasupunuti@gmail.com</div>
+                <div class="contact-item">+1 (806) 313-8008</div>
+                <div class="contact-item">LinkedIn Profile</div>
+                <div class="contact-item">Edmond, Oklahoma</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                <div class="summary">
+                    Results-driven Computer Science graduate student with 2.8+ years of experience in application
+                    packaging, SCCM administration, and cloud infrastructure services. Proven track record of
+                    successfully deploying 120+ applications and achieving 99.89% compliance on large-scale security
+                    patches affecting 14,500+ machines. Completing Master's in Computer Science (graduating August 15,
+                    2025) while seeking opportunities in Application Packaging, SCCM Administration, and Software
+                    Engineering roles.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">EDUCATION</h2>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Master of Science in Computer Science</div>
+                            <div class="company">Oklahoma Christian University</div>
+                            <div class="location">Edmond, Oklahoma</div>
+                        </div>
+                        <div class="duration">Sept 2024 - Aug 2025</div>
+                    </div>
+                    <p><em>Currently in Final Semester - Graduating August 15, 2025</em></p>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Graduate Coursework in Computer Science</div>
+                            <div class="company">University of Central Oklahoma</div>
+                            <div class="location">Edmond, Oklahoma</div>
+                        </div>
+                        <div class="duration">Jan 2023 - Aug 2024</div>
+                    </div>
+                    <p><em>Transferred to Oklahoma Christian University to complete degree</em></p>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Bachelor of Engineering in Computer Science</div>
+                            <div class="company">Nagarjuna College of Engineering and Technology</div>
+                            <div class="location">Bengaluru, India</div>
+                        </div>
+                        <div class="duration">2016 - 2020</div>
+                    </div>
+                    <p><strong>CGPA: 7.89/10</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Regular IT Student Technician</div>
+                            <div class="company">University of Central Oklahoma</div>
+                            <div class="location">Edmond, Oklahoma</div>
+                        </div>
+                        <div class="duration">Feb 2023 - May 2024</div>
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Managed complete IT asset lifecycle including imaging, updating, and retiring machines
+                            </li>
+                            <li>Provided comprehensive technical support for software, hardware, and account-related
+                                issues to faculty, staff, and students</li>
+                            <li>Administered Active Directory and Organizational Unit (OU) management</li>
+                            <li>Handled ticket management system for efficient issue resolution</li>
+                            <li>Gained hands-on experience in enterprise IT operations and customer service</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Engineer - Cloud & Infrastructure Services</div>
+                            <div class="company">LTI - Larsen & Toubro Infotech (now LTIMindtree)</div>
+                            <div class="location">Bengaluru, India</div>
+                        </div>
+                        <div class="duration">Jun 2021 - Jan 2023</div>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-category">Key Achievements:</div>
+                        <ul>
+                            <li><strong>Application Packaging Excellence:</strong> Created and deployed 120+
+                                applications using PSADT and Advanced Installer with comprehensive SCCM deployment
+                                knowledge</li>
+                            <li><strong>Security Compliance Leadership:</strong> Developed and deployed Autodesk Log4NET
+                                security hotfix packages to 14,500+ machines, achieving 99.89% compliance and
+                                eliminating security vulnerabilities</li>
+                            <li><strong>Cost Optimization:</strong> Created Bentley V8i removal packages that secured
+                                additional discounts from Bentley for unused licenses, directly impacting client cost
+                                savings</li>
+                            <li><strong>License Migration Expertise:</strong> Developed 35+ license migration packages
+                                to transition applications from Black & Veatch to RSK Binnies during organizational
+                                restructuring</li>
+                            <li><strong>MSIX Innovation:</strong> Created 20+ MSIX packages and implemented App Attach
+                                deployment strategies</li>
+                        </ul>
+
+                        <div class="achievement-category">Technical Contributions:</div>
+                        <ul>
+                            <li>Utilized Master Re-Packager for application compatibility assessment for MSIX package
+                                creation</li>
+                            <li>Created custom PowerShell scripts tailored to specific client requirements</li>
+                            <li>Developed uninstallation packages for legacy application cleanup</li>
+                            <li>Performed internal QA and coordinated with Project Managers for UAT and pilot
+                                deployments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Graduate Engineer Trainee - Cloud & Infrastructure Services</div>
+                            <div class="company">LTI - Larsen & Toubro Infotech</div>
+                            <div class="location">Bengaluru, India</div>
+                        </div>
+                        <div class="duration">Jun 2020 - Jun 2021</div>
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Successfully completed comprehensive CIS Academy training program</li>
+                            <li>Deployed to Black & Veatch application packaging project</li>
+                            <li>Created 110+ packages using PowerShell Application Deployment Toolkit (PSADT)</li>
+                            <li>Configured packaged applications in SCCM for deployment and advertisement</li>
+                            <li>Created Active Directory groups and configured query rules for available collections
+                            </li>
+                            <li>Managed change requests for final deployment to end-users</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">TECHNICAL SKILLS</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Application Packaging & Deployment</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PSADT</span>
+                            <span class="skill-tag">Advanced Installer</span>
+                            <span class="skill-tag">MSIX Packaging</span>
+                            <span class="skill-tag">SCCM Admin</span>
+                            <span class="skill-tag">App Attach</span>
+                            <span class="skill-tag">Intune</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Cloud & Infrastructure</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag">System Administration</span>
+                            <span class="skill-tag">Windows Server</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Programming & Scripting</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PowerShell</span>
+                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Database Management</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Tools & Platforms</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Ticket Management</span>
+                            <span class="skill-tag">UAT Coordination</span>
+                            <span class="skill-tag">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">CERTIFICATIONS</h2>
+                <div class="certifications">
+                    <div class="cert-item">
+                        <div class="cert-title">AWS Knowledge: Architecting</div>
+                        <div class="cert-issuer">Amazon Web Services (AWS) - April 2025</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">AWS Knowledge: Cloud Essentials</div>
+                        <div class="cert-issuer">Amazon Web Services (AWS) - March 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">ACADEMIC PROJECTS & PUBLICATIONS</h2>
+                <div class="publication">
+                    <div class="pub-title">"Design of IoT Based Smart Vehicle Speed Controller Model For Restricted
+                        Areas Using Arduino Controller"</div>
+                    <div class="pub-journal">Journal of Interdisciplinary Cycle Research | February 2020</div>
+                    <div class="pub-description">
+                        Developed IoT-based solution for automated vehicle speed control in restricted zones utilizing
+                        Arduino microcontroller for real-time speed monitoring and control.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">PROFESSIONAL RECOGNITION</h2>
+                <div class="recognition">
+                    <ul>
+                        <li>Received appreciation from Senior Director - CIS & On-site Manager for exceptional
+                            performance in license migration project completion</li>
+                        <li>Achieved 99.89% compliance rate on critical security patch deployment across enterprise
+                            environment</li>
+                        <li>Recognized for innovative solutions in application packaging and deployment optimization
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">AVAILABILITY</h2>
+                <div class="availability">
+                    <h3>Open to Work</h3>
+                    <p><strong>Target Roles:</strong> Application Packager, SCCM Administrator, and Software Engineer
+                        positions</p>
+                    <p><strong>Available:</strong> Immediately upon graduation (August 15, 2025)</p>
+                    <p><strong>Willing to relocate:</strong> Yes | <strong>Work Authorization:</strong> F-1 Student Visa
+                        (eligible for OPT)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">Print/Save PDF</button>
+</body>
+
+</html>
